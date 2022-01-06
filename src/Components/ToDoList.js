@@ -10,13 +10,33 @@ const ToDoList = (props) => {
       </div>
   }
   else {
-    toDoListy = props.tasks.map((item) =>
-      <div className="d-flex justify-content-between my-3" key={item.id}>
-        <input type="checkbox" checked={item.completed}></input>
-        <p className="my-2">{item.content}</p>
+    toDoListy = props.tasks.map((todo) =>
+      <div className="d-flex justify-content-between my-3" key={todo.id}>
+        <input type="checkbox" checked={todo.completed} onChange={() => checkTask(todo)}></input>
+        <p className="my-2">{todo.content}</p>
         <button className="btn btn-danger">delete</button>
       </div>
     );
+  }
+
+  const checkTask = (todo) => {
+    console.log(todo.id, todo.completed);
+    if(!todo.id) {
+      return;
+    }
+    const todoStatus = todo.completed ? 'active' : 'complete';
+
+    fetch((`https://altcademy-to-do-list-api.herokuapp.com/tasks/${todo.id}/mark_${todoStatus}?api_key=your-key`), {
+      method: "PUT",
+      mode: "cors",
+    }).then(props.checkStatus)
+      .then(props.json)
+      .then((data) => {
+        props.fetchTasks();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
   return (

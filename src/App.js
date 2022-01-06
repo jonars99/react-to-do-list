@@ -40,8 +40,18 @@ function App() {
         <div className="col-12 todo-wrapper">
           <div>
             <h4 className="foo">My to do list</h4>
-            <NewToDo tasks={tasks} setTasks={setTasks} fetchTasks={fetchTasks} checkStatus={checkStatus} json={json} />
-            <ToDoList tasks={tasks} key={tasks.id} />
+            <NewToDo 
+              tasks={tasks} 
+              setTasks={setTasks} 
+              fetchTasks={fetchTasks} 
+              checkStatus={checkStatus} 
+              json={json} />
+            <ToDoList 
+              tasks={tasks} 
+              key={tasks.id}
+              fetchTasks={fetchTasks}
+              checkStatus={checkStatus}
+              json={json} />
             <StatusBar />
           </div>        
         </div>

@@ -9,8 +9,6 @@ const NewToDo = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`submitted ${input}`);
-
     if (!input) {
       return;
     }
@@ -34,9 +32,6 @@ const NewToDo = (props) => {
         console.log(error);
       })
   }
-
-  //post to api
-  //fetch tasks to update dom
 
   return (
     <form onSubmit={handleSubmit}>
