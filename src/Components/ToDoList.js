@@ -14,14 +14,13 @@ const ToDoList = (props) => {
       <div className="d-flex justify-content-between my-3" key={todo.id}>
         <input type="checkbox" checked={todo.completed} onChange={() => checkTask(todo)}></input>
         <p className="my-2">{todo.content}</p>
-        <button className="btn btn-danger">delete</button>
+        <button className="btn btn-danger" onClick={() => deleteTask(todo)}>delete</button>
       </div>
     );
   }
 
   const checkTask = (todo) => {
-    console.log(todo.id, todo.completed);
-    if(!todo.id) {
+    if (!todo.id) {
       return;
     }
     const todoStatus = todo.completed ? 'active' : 'complete';
@@ -37,6 +36,25 @@ const ToDoList = (props) => {
       .catch((error) => {
         console.log(error);
       })
+  }
+
+  const deleteTask = (todo) => {
+    if (!todo.id) {
+      return;
+    }
+
+    fetch((`https://altcademy-to-do-list-api.herokuapp.com/tasks/${todo.id}?api_key=your-key`), {
+      method: "DELETE",
+      mode: "cors",
+    }).then(props.checkStatus)
+      .then(props.json)
+      .then((data) => {
+        props.fetchTasks();
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
   }
 
   return (
