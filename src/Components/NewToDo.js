@@ -2,9 +2,12 @@ import React from 'react';
 
 const NewToDo = () => {
   return (
-    <div>
-      <h6>this will be input and new to do</h6>
-    </div>
+    <form>
+      <input
+        placeholder="new to do"
+      ></input>
+      <button className="btn btn-success">add</button>
+    </form>
   );
 }
 

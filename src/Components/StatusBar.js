@@ -2,8 +2,18 @@ import React from 'react';
 
 const StatusBar = () => {
   return (
-    <div>
-      <h6>this is the status bar at the bottom</h6>
+    <div className="row">
+      <div className="col-12">
+        <label>
+          <input type="checkbox" name="all" /> all
+        </label>
+        <label>
+          <input type="checkbox" name="active" /> active
+        </label>
+        <label>
+          <input type="checkbox" name="completed" /> completed
+        </label>
+      </div>
     </div>
   );
 }
