@@ -3,7 +3,7 @@ import React from 'react';
 const StatusBar = () => {
   return (
     <div className="row">
-      <div className="col-12">
+      <div className="col-12 d-flex justify-content-evenly">
         <label>
           <input type="checkbox" name="all" /> all
         </label>

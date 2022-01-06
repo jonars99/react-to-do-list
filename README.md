@@ -1,3 +1,14 @@
+# React To Do List App
+
+This project is one of Altcademy's assignment within the React module, using React, JSX and Fetch, plus CSS for styling.
+
+# Please Note
+
+The api key has been removed, one can create a new user key on the altcademy to do list API (ATDAPI) and replace "your-key" in the fetch requests
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

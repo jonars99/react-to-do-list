@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useEffect, useCallback }from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NewToDo from './Components/NewToDo';
 import ToDoList from './Components/ToDoList';
@@ -6,23 +6,33 @@ import StatusBar from './Components/StatusBar';
 import './styles/style.css';
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {	
-      id: 4798,
-      content:	"have to do this",
-      completed:	false
-    },
-    {
-      id:	4800,
-      content:	"to do",
-      completed:	false
-    },
-    {
-      id:	4820,
-      content:	"asdf",
-      completed:	false
+  const [tasks, setTasks] = useState([]);
+
+  const checkStatus = (response) => {
+    if (response.ok) {
+      return response;
     }
-  ]);
+    throw new Error('Error: request was a 404 or 500');
+  }
+
+  const json = (response) => response.json()
+
+  const fetchTasks = useCallback(() => {
+    fetch("https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=your-key")
+      .then(checkStatus)
+      .then(json)
+      .then((response) => {
+        console.log('fetched', response);
+        setTasks(response.tasks);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      })
+  }, []);
+
+  useEffect(() => {
+    fetchTasks();
+  }, [fetchTasks]);
 
   return (
     <div className="container-fluid">
@@ -30,8 +40,8 @@ function App() {
         <div className="col-12 todo-wrapper">
           <div>
             <h4 className="foo">My to do list</h4>
-            <NewToDo />
-            <ToDoList key={tasks.id} tasks={tasks} setTasks={setTasks}/>
+            <NewToDo tasks={tasks} setTasks={setTasks} fetchTasks={fetchTasks} checkStatus={checkStatus} json={json} />
+            <ToDoList tasks={tasks} key={tasks.id} />
             <StatusBar />
           </div>        
         </div>
