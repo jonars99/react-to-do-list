@@ -10,7 +10,15 @@ const ToDoList = (props) => {
       </div>
   }
   else {
-    toDoListy = props.tasks.map((todo) =>
+    toDoListy = props.tasks.filter((todo) => {
+      if (props.filter === "all") {
+          return true;
+      } else if (props.filter === "active") {
+          return !todo.completed;
+      } else {
+          return todo.completed;
+      }
+    }).map((todo) =>
       <div className="d-flex justify-content-between my-3" key={todo.id}>
         <input type="checkbox" checked={todo.completed} onChange={() => checkTask(todo)}></input>
         <p className="my-2">{todo.content}</p>

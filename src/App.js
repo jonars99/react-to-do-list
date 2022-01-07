@@ -7,6 +7,7 @@ import './styles/style.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const checkStatus = (response) => {
     if (response.ok) {
@@ -22,7 +23,6 @@ function App() {
       .then(checkStatus)
       .then(json)
       .then((response) => {
-        console.log('fetched', response);
         setTasks(response.tasks);
       })
       .catch((error) => {
@@ -45,14 +45,18 @@ function App() {
               setTasks={setTasks} 
               fetchTasks={fetchTasks} 
               checkStatus={checkStatus} 
-              json={json} />
+              json={json} 
+              filter={filter} />
             <ToDoList 
               tasks={tasks} 
               key={tasks.id}
               fetchTasks={fetchTasks}
               checkStatus={checkStatus}
-              json={json} />
-            <StatusBar />
+              json={json} 
+              filter={filter} />
+            <StatusBar
+              filter={filter}
+              setFilter={setFilter} />
           </div>        
         </div>
       </div>
