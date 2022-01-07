@@ -34,13 +34,14 @@ const NewToDo = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="todo-form" className="d-flex justify-content-between">
       <input
         placeholder="new to do"
         onChange={handleInput}
         value={input}
+        id="todo-input"
       ></input>
-      <button className="btn btn-success">add</button>
+      <button className="btn add-btn">add</button>
     </form>
   );
 }

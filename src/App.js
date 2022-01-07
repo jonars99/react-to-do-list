@@ -39,7 +39,7 @@ function App() {
       <div className="row">
         <div className="col-12 todo-wrapper">
           <div>
-            <h4 className="foo">My to do list</h4>
+            <h4 className="mb-3">My to do list</h4>
             <NewToDo 
               tasks={tasks} 
               setTasks={setTasks} 

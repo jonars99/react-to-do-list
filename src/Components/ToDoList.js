@@ -19,10 +19,10 @@ const ToDoList = (props) => {
           return todo.completed;
       }
     }).map((todo) =>
-      <div className="d-flex justify-content-between my-3" key={todo.id}>
+      <div className="d-flex justify-content-between align-items-center px-2 my-3 todo" key={todo.id}>
         <input type="checkbox" checked={todo.completed} onChange={() => checkTask(todo)}></input>
         <p className="my-2">{todo.content}</p>
-        <button className="btn btn-danger" onClick={() => deleteTask(todo)}>delete</button>
+        <button className="btn delete-btn" onClick={() => deleteTask(todo)}>X</button>
       </div>
     );
   }
@@ -67,7 +67,7 @@ const ToDoList = (props) => {
 
   return (
     <div className="row">
-      <div className="col-12">
+      <div className="col-12 my-2">
         {toDoListy}
       </div>
     </div>

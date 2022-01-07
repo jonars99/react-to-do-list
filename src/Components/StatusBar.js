@@ -8,7 +8,7 @@ const StatusBar = (props) => {
 
   return (
     <div className="row">
-      <div className="col-12 d-flex justify-content-evenly">
+      <div className="col-12 d-flex justify-content-evenly status-bar">
         <label>
           <input type="checkbox" name="all" checked={props.filter === "all"} onChange={toggleFilter} /> all
         </label>

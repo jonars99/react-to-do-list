@@ -1,6 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,300&display=swap');
+
+
+/** main styles **/
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #012b3b;
+  color: #f5e5c8;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 70px;
+  letter-spacing: 3px;
+}
+
+
+/** adding new to do input **/
+#todo-form {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+#todo-input {
+  font-weight: 300;
+  font-style: italic;
+  color: grey;
+  border: none;
+  border-radius: 5px;
+  width: 90%;
+  padding-left: 10px;
+}
+
+.add-btn {
+  font-weight: 300;
+  border: 2px solid black;
+  height: 40px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.add-btn:hover {
+  color: green;
+  border: 2px solid green;
+}
+
+
+/** to do list **/
 .todo-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vh;
+  margin-top: 8vh;
+}
+
+.todo:hover {
+  border: 1px solid #f7f7f7;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #e7e7e7;
+  height: 40px;
+  padding: 0 10px;
+  border: 2px solid black;
+}
+
+.delete-btn:hover {
+  border: 2px solid #be1313;
+  color: #be1313;
+}
+
+
+/** to do status bar **/
+.status-bar label:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
