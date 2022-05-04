@@ -2,6 +2,11 @@
 
 This project is one of Altcademy's assignment within the React module, using React, JSX and Fetch, plus CSS for styling.
 
+## Create a New User for a unique API Key
+
+Go to altcademy's to do list API ([ATDAPI](https://altcademy-to-do-list-api.herokuapp.com/))  
+Replace 'your-key' with your unique key in each request  
+
 ## Features
 
 * Add to your to do list
