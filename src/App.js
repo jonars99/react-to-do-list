@@ -19,7 +19,7 @@ function App() {
   const json = (response) => response.json()
 
   const fetchTasks = useCallback(() => {
-    fetch("https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=204")
+    fetch("https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=your-key")
       .then(checkStatus)
       .then(json)
       .then((response) => {

@@ -13,7 +13,7 @@ const NewToDo = (props) => {
       return;
     }
 
-    fetch("https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=204", {
+    fetch("https://altcademy-to-do-list-api.herokuapp.com/tasks?api_key=your-key", {
       method: "POST",
       mode: "cors",
       headers: { "Content-Type": "application/json"},
