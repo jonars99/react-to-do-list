@@ -2,14 +2,15 @@
 
 This project is one of Altcademy's assignment within the React module, using React, JSX and Fetch, plus CSS for styling.
 
-# Please Note
+## Features
 
-The api key has been removed, one can create a new user key on the altcademy to do list API (ATDAPI) and replace "your-key" in the fetch requests
+* Add to your to do list
+* Dynamically add tasks in the input element
+* Each task has a mark complete button, a description and a remove button
+* User can mark tasks as complete and delete tasks
+* User can toggle between all, active and completed tasks
 
-
-
-
-# Getting Started with Create React App
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
