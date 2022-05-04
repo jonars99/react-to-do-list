@@ -10,7 +10,7 @@ This project is one of Altcademy's assignment within the React module, using Rea
 * User can mark tasks as complete and delete tasks
 * User can toggle between all, active and completed tasks
 
-### Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
