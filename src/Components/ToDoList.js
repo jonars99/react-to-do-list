@@ -33,7 +33,9 @@ const ToDoList = (props) => {
     }
     const todoStatus = todo.completed ? 'active' : 'complete';
 
-    fetch((`https://altcademy-to-do-list-api.herokuapp.com/tasks/${todo.id}/mark_${todoStatus}?api_key=your-key`), {
+    const apiUrl = process.env.REACT_APP_TO_DO_API_URL;
+    const apiKey = process.env.REACT_APP_TO_DO_KEY;
+    fetch((`${apiUrl}/tasks/${todo.id}/mark_${todoStatus}?api_key=${apiKey}`), {
       method: "PUT",
       mode: "cors",
     }).then(props.checkStatus)
@@ -51,7 +53,9 @@ const ToDoList = (props) => {
       return;
     }
 
-    fetch((`https://altcademy-to-do-list-api.herokuapp.com/tasks/${todo.id}?api_key=your-key`), {
+    const apiUrl = process.env.REACT_APP_TO_DO_API_URL;
+    const apiKey = process.env.REACT_APP_TO_DO_KEY;
+    fetch((`${apiUrl}/tasks/${todo.id}?api_key=${apiKey}`), {
       method: "DELETE",
       mode: "cors",
     }).then(props.checkStatus)

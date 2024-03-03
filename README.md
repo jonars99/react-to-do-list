@@ -4,8 +4,12 @@ This project is one of Altcademy's assignment within the React module, using Rea
 
 ## Create a New User for a unique API Key
 
-Go to altcademy's to do list API ([ATDAPI](https://altcademy-to-do-list-api.herokuapp.com/))  
-Replace 'your-key' with your unique key in each request  
+Go to altcademy's to do list API ([ATDAPI](https://fewd-todolist-api.onrender.com/))  
+Create a copy of the env.example file and enter your key and the api url
+
+```
+cp .env.example .env
+```
 
 ## Features
 
